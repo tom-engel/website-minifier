@@ -8,24 +8,37 @@
 # and
 # yuicompressor [http://yui.github.io/yuicompressor/]
 
+# Parameters
+Param(  
+  [switch]$html,
+  [switch]$css,
+  [switch]$js
+)
+
+if ($args.Count -eq 0) {
+  $html = $true
+  $css = $true
+  $js = $true
+}
+
 # Variables
 # Path to htmlcompressor
-$html = ".\test\jars\htmlcompressor-1.5.3.jar"
+$htmlcomp = ".\test\jars\htmlcompressor-1.5.3.jar"
 
 # Path to yuicompressor
-$yui = ".\test\jars\yuicompressor-2.4.8.jar"
+$yuicomp = ".\test\jars\yuicompressor-2.4.8.jar"
 
 # Path to output folder
 $out =".\test\min"
 
 # Paths to html-containing folders
-$htmlFolders = ".\test\project"
+$htmlFolders = ".\"
 
 # Paths to CSS-containing folders
-$cssFolders = ".\test\project\css"
+$cssFolders = ".\css"
 
 # Paths to js-containing folders
-$jsFolders = ".\test\project\js"
+$jsFolders = ".\js"
 
 # Paths to CSS-files
 $cssFiles = "$cssFolders/style.css"
@@ -51,22 +64,28 @@ if (-Not (Test-Path $out)) {
     mkdir $out
 }
 
-# Check other folders
-CheckFolders $htmlFolders $out
-CheckFolders $cssFolders  $out
-CheckFolders $jsFolders   $out
-
 # Compress HTML
-foreach($folder in $htmlFolders) {
-    java -jar $html $folder -o $out/$folder
+if($html) {
+  CheckFolders $htmlFolders $out
+  foreach($folder in $htmlFolders) {
+    java -jar $htmlcomp $folder -o $out/$folder
+  }
 }
 
+
 # Compress CSS
-foreach($file in $cssFiles) {
-    java -jar $yui -o $out/$file $file
+if ($css) {
+  foreach($file in $cssFiles) {
+    CheckFolders $cssFolders  $out
+    java -jar $yuicomp -o $out/$file $file
+  }
 }
 
 # Compress JavaScript
-foreach($file in $jsFiles) {
-    java -jar $yui -o $out/$file $file
+if ($js) {
+  CheckFolders $jsFolders   $out
+  foreach($file in $jsFiles) {
+    java -jar $yuicomp -o $out/$file $file
+  }
 }
+

@@ -1,0 +1,87 @@
+body { 
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f3f3f3;
+}
+
+h1 {
+    font-family: 'Lobster', cursive;
+    font-size: 50pt;
+    padding-top: 32px;
+    color: #333;
+}
+
+h2 {
+    font-family: 'Inconsolata';
+    font-size: 25pt;
+    color: #333;
+}
+
+#outer-wrapper {
+    width: 720px;
+    margin-top: 10px;
+    margin-right: auto;
+    margin-bottom: 10px;
+    margin-left: auto;
+    text-align: center;
+    background-color: #128FB2;
+}
+
+.io {
+    width: 66%;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    font-family: 'Inconsolata';
+    background-color: #f3f3f3;
+}
+
+.iobutton{
+    width: 33%;
+    height: 64px;
+    font-family: 'Lobster', cursive;
+    font-size: 32pt;
+    line-height: 1.3333333;
+    border-radius: 6px;
+    color: #333;
+    background-color: #f3f3f3;
+    border-color: #FFA54D;
+    border: 1px solid transparent;
+}
+
+.iobutton:hover {
+    background-color: #FFA54D;
+    color: #333;
+    cursor: pointer;
+}
+.iobutton:active {
+    background-color: #FFB266;
+    color: #128FB2;
+}
+
+#burst-12 {
+    background: #FFA54D;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    text-align: center;
+}
+#burst-12:before, #burst-12:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background: #FFA54D;
+}
+#burst-12:before {
+    -webkit-transform: rotate(30deg);
+       -moz-transform: rotate(30deg);
+        -ms-transform: rotate(30deg);
+         -o-transform: rotate(30deg);
+}
+#burst-12:after {
+    -webkit-transform: rotate(60deg);
+       -moz-transform: rotate(60deg);
+        -ms-transform: rotate(60deg);
+         -o-transform: rotate(60deg);
+}

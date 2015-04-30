@@ -10,28 +10,28 @@
 
 # Variables
 # Path to htmlcompressor
-$html = "C:\jars\htmlcompressor-x.x.x.jar"
+$html = ".\test\jars\htmlcompressor-1.5.3.jar"
 
 # Path to yuicompressor
-$yui = "C:\jars\yuicompressor-x.x.x.jar"
+$yui = ".\test\jars\yuicompressor-2.4.8.jar"
 
 # Path to output folder
-$out ="./min"
+$out =".\test\min"
 
 # Paths to html-containing folders
-$htmlFolders = "./"
+$htmlFolders = ".\test\project"
 
 # Paths to CSS-containing folders
-$cssFolders = "./css"
+$cssFolders = ".\test\project\css"
 
 # Paths to js-containing folders
-$jsFolders = "./js"
+$jsFolders = ".\test\project\js"
 
 # Paths to CSS-files
 $cssFiles = "$cssFolders/style.css"
 
 # Paths to js-Files
-$jsFiles = "$jsFolders/script.js"
+$jsFiles = "$jsFolders/grolb.js"
 
 # Functions
 # Check if out-folders exist. If not, create them

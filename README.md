@@ -1,8 +1,15 @@
 # minify.ps1
 A PowerShell script to minify typical website-projects with html, CSS and JavaScript-files.
 
-For html compression [htmlcompressor](https://code.google.com/p/htmlcompressor/) is used.
+### Used compressors
+  * [htmlcompressor](https://code.google.com/p/htmlcompressor/) for html
+  * [YUI Compressor](http://yui.github.io/yuicompressor/) for css and JavaScript
 
-For CSS and JavaScript compression [YUI Compressor](http://yui.github.io/yuicompressor/) is used.
+### Usage
+Download [minify.ps1](https://raw.githubusercontent.com/tom-engel/website-minifier/master/minify.ps1) and the compressors listed above. Put the script into your project folder. Specify the paths to html, CSS and JavaScript-files in the script (Section `# Variables`).
 
-These .jars are not included. Make sure you download them and specify the path in the script.
+#### Parameters
+  * `-html` for html-files
+  * `-css` for CSS-files
+  * `-js` for JavaScript-files
+  * No parameters for all
